@@ -1,0 +1,18 @@
+{
+  "dependencies": {
+    "geojson-area": {
+      "version": "0.2.0",
+      "dependencies": {
+        "wgs84": {
+          "version": "0.0.0"
+        }
+      }
+    },
+    "geojson-length": {
+      "version": "0.1.0"
+    },
+    "geojson-validation": {
+      "version": "0.1.5"
+    }
+  }
+}
