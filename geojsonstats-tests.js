@@ -17,8 +17,11 @@ Tinytest.add('getLength - nonGeoJson', function(test)
 {
   var testObj = testObjNonGeoJson;
   var expectedErrorMsg = "cannot determine length for the given input";
-  var f = GeoJsonStats.getLength(testObj);
-  test.throws(f, expectedErrorMsg);
+  var f = function()
+  {
+    GeoJsonStats.getLength(testObj);
+  }
+  test.throws(GeoJsonStats.getLength, expectedErrorMsg);
 });
 
 //Tinytest.add('getArea - testObjPolygon', function(test)
