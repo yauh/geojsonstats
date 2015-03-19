@@ -4,6 +4,9 @@ yauh:geojsonstats
 Statistics for GeoJSON objects. This package returns the length and area
 for GeoJSON objects.
 
+[![Build Status](https://travis-ci.org/yauh/geojsonstats.svg?branch=master)](https://travis-ci.org/yauh/geojsonstats)
+
+
 Usage
 -----
 
