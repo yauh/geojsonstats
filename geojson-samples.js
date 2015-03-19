@@ -1,14 +1,11 @@
-// Write your tests here!
-// Here is an example.
-
 testObjNonGeoJson = {
-  foo: "bar",
-  bar: "foo"
+  foo: 'bar',
+  bar: 'foo'
 };
 
 testObjLineStringGeometry = {
-  "type": "LineString",
-  "coordinates": [
+  'type': 'LineString',
+  'coordinates': [
     [-101.744384765625,
       39.32155002466662
     ],
@@ -91,16 +88,92 @@ testObjLineStringGeometry = {
 };
 
 testObjLineStringFeature = {
-  "type": "Feature",
-  "geometry": testObjLineStringGeometry,
-  "properties":
-  {
-    "name": "A linestring"
+  'type': 'Feature',
+  'geometry': testObjLineStringGeometry,
+  'properties': {
+    'name': 'A LineString'
   }
 };
+
+testObjMultiLineStringGeometry = {
+  'type': 'MultiLineString',
+  'coordinates': [
+    [
+      [-105.0214433670044,
+        39.57805759162015
+      ],
+      [-105.02150774002075,
+        39.57780951131517
+      ],
+      [-105.02157211303711,
+        39.57749527498758
+      ],
+      [-105.02157211303711,
+        39.57716449836683
+      ],
+      [-105.02157211303711,
+        39.57703218727656
+      ],
+      [-105.02152919769287,
+        39.57678410330158
+      ]
+    ],
+    [
+      [-105.01989841461182,
+        39.574997872470774
+      ],
+      [-105.01959800720215,
+        39.57489863607502
+      ],
+      [-105.01906156539916,
+        39.57478286010041
+      ]
+    ],
+    [
+      [-105.01717329025269,
+        39.5744024519653
+      ],
+      [-105.01698017120361,
+        39.574385912433804
+      ],
+      [-105.0166368484497,
+        39.574385912433804
+      ],
+      [-105.01650810241699,
+        39.5744024519653
+      ],
+      [-105.0159502029419,
+        39.574270135602866
+      ]
+    ],
+    [
+      [-105.0142765045166,
+        39.57397242286402
+      ],
+      [-105.01412630081175,
+        39.57403858136094
+      ],
+      [-105.0138258934021,
+        39.57417089816531
+      ],
+      [-105.01331090927124,
+        39.57445207053608
+      ]
+    ]
+  ]
+};
+
+testObjMultiLineStringFeature = {
+  'type': 'Feature',
+  'geometry': testObjMultiLineStringGeometry,
+  'properties': {
+    'name': 'A MultiLineString'
+  }
+};
+
 testObjPolygonGeometry = {
-  "type": "Polygon",
-  "coordinates": [
+  'type': 'Polygon',
+  'coordinates': [
     [
       [-84.32281494140625,
         34.9895035675793
@@ -692,11 +765,51 @@ testObjPolygonGeometry = {
     ]
   ]
 };
+
 testObjPolygonFeature = {
-  "type": "Feature",
-  "geometry": testObjPolygonGeometry,
-  "properties":
-  {
-    "name": "A polygon"
+  'type': 'Feature',
+  'geometry': testObjPolygonGeometry,
+  'properties': {
+    'name': 'A polygon'
   }
 };
+
+statsObjLineString = [{
+  title: 'length',
+  count: 1,
+  mean: 376608.7587093914,
+  sum: 376608.7587093914,
+  variance: 0,
+  median: 376608.7587093914,
+  min: 376608.7587093914,
+  max: 376608.7587093914
+}, {
+  title: 'area',
+  count: 0,
+  mean: null,
+  sum: 0,
+  variance: null,
+  median: null,
+  min: undefined,
+  max: undefined
+}];
+
+statsObjPolygon = [{
+  title: 'length',
+  count: 0,
+  mean: null,
+  sum: 0,
+  variance: null,
+  median: null,
+  min: undefined,
+  max: undefined
+}, {
+  title: 'area',
+  count: 1,
+  mean: 137539041347.99316,
+  sum: 137539041347.99316,
+  variance: 0,
+  median: 137539041347.99316,
+  min: 137539041347.99316,
+  max: 137539041347.99316
+}];

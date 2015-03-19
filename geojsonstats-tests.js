@@ -1,30 +1,86 @@
-Tinytest.add('getLength - testObjLineStringGeometry', function(test)
-{
+Tinytest.add('getLength - Calc testObjLineStringGeometry', function (test) {
   var testObj = testObjLineStringGeometry;
-  var length = GeoJsonStats.getLength(testObj);
-
-  test.equal(376608.7587093914, length);
+  var result = GeoJsonStats.getLength(testObj);
+  var expected = 376608.7587093914;
+  test.equal(expected, result);
 });
 
-Tinytest.add('getLength - testObjLineStringFeature', function(test)
-{
+Tinytest.add('getLength - Calc testObjLineStringFeature', function (test) {
   var testObj = testObjLineStringFeature;
-  var length = GeoJsonStats.getLength(testObj);
-  test.equal(376608.7587093914, length);
+  var result = GeoJsonStats.getLength(testObj);
+  var expected = 376608.7587093914;
+  test.equal(expected, result);
 });
 
-Tinytest.add('getLength - nonGeoJson', function(test)
-{
-  var testObj = testObjNonGeoJson;
-  var expectedErrorMsg = "cannot determine length for the given input";
-  var f = function()
-  {
+Tinytest.add('getLength - Error testObjPolygonFeature', function (test) {
+  var testObj = testObjPolygonFeature;
+  var expected = 'cannot determine length for the given input';
+  var f = function () {
     GeoJsonStats.getLength(testObj);
   }
-  test.throws(GeoJsonStats.getLength, expectedErrorMsg);
+  test.throws(GeoJsonStats.getLength, expected);
 });
 
-//Tinytest.add('getArea - testObjPolygon', function(test)
-//{
-//  var area = GeoJsonStats.getArea(testObjPolygonGeometry);
-//});
+Tinytest.add('getLength - Error nonGeoJson', function (test) {
+  var testObj = testObjNonGeoJson;
+  var expected = 'cannot determine length for the given input';
+  var f = function () {
+    GeoJsonStats.getLength(testObj);
+  }
+  test.throws(GeoJsonStats.getLength, expected);
+});
+
+Tinytest.add('getArea - Calc testObjPolygonGeometry', function (test) {
+  var testObj = testObjPolygonGeometry;
+  var result = GeoJsonStats.getArea(testObj);
+  var expected = 137539041347.99316;
+  test.equal(expected, result);
+});
+
+Tinytest.add('getArea - Calc testObjPolygonFeature', function (test) {
+  var testObj = testObjPolygonFeature;
+  var result = GeoJsonStats.getArea(testObj);
+  var expected = 137539041347.99316;
+  test.equal(expected, result);
+});
+
+Tinytest.add('getArea - Error testObjLineStringFeature', function (test) {
+  var testObj = testObjLineStringFeature;
+  var expected = 'cannot determine area for the given input';
+  var f = function () {
+    GeoJsonStats.getArea(testObj);
+  }
+  test.throws(GeoJsonStats.getArea, expected);
+});
+
+Tinytest.add('getArea - Error nonGeoJson', function (test) {
+  var testObj = testObjNonGeoJson;
+  var expected = 'cannot determine area for the given input';
+  var f = function () {
+    GeoJsonStats.getArea(testObj);
+  }
+  test.throws(GeoJsonStats.getArea, expected);
+});
+
+Tinytest.add('getStats - Calc testObjLineStringGeometry', function (test) {
+  var testObj = testObjLineStringGeometry;
+  var result = GeoJsonStats.getStats(testObj);
+  var expected = statsObjLineString;
+  test.equal(expected, result);
+});
+
+Tinytest.add('getStats - Calc testObjPolygonGeometry', function (test) {
+  var testObj = testObjPolygonGeometry;
+  var result = GeoJsonStats.getStats(testObj);
+  var expected = statsObjPolygon;
+  test.equal(expected, result);
+});
+
+Tinytest.add('getStats - Error nonGeoJson', function (test) {
+  var testObj = testObjNonGeoJson;
+  var expected = 'cannot determine stats for the given input';
+  var f = function () {
+    GeoJsonStats.getStats(testObj);
+  }
+  test.throws(GeoJsonStats.getStats, expected);
+});
