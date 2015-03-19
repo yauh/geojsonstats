@@ -1,6 +1,6 @@
 Package.describe({
   name: 'yauh:geojsonstats',
-  version: '0.0.1-dev',
+  version: '0.0.1',
   // Brief, one-line summary of the package.
   summary: 'Get statistics for GeoJSON objects on the server',
   // URL to the Git repository containing the source code for this package.
