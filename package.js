@@ -11,7 +11,7 @@ Package.describe({
 });
 
 Npm.depends({
-  'geojson-stats': '0.0.1',
+  'geojson-stats': '0.0.2',
   'geojson-validation': '0.1.5',
   'geojson-length': '0.1.1',
   'geojson-area': '0.2.0'
