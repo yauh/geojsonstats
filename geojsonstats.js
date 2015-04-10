@@ -77,5 +77,14 @@ GeoJsonStats = {
     }
     var stats = geojsonStats(geojson);
     return stats;
+  },
+  /**
+   * Returns true if a valid GeoJSON object was provided.
+   * @function
+   * @param {object} geojson - A valid GeoJSON object.
+   * @returns {Array.<Object>} - The length in meters.
+   */
+  valid: function (geojson) {
+    return validGeoJson.valid(geojson);
   }
 };
