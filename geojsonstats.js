@@ -5,6 +5,15 @@ var geojsonStats = Npm.require('geojson-stats');
 
 GeoJsonStats = {
   /**
+   * Returns true if a valid GeoJSON object was provided.
+   * @function
+   * @param {object} geojson - A valid GeoJSON object.
+   * @returns {Boolean} - Whether input is valid GeoJSON.
+   */
+  validate: function (geojson) {
+    return validGeoJson.valid(geojson);
+  },
+  /**
    * Returns the length of a LineString or MultiLineString.
    * @function
    * @param {object} geojson - A valid GeoJSON object that contains a LineString or MultiLineString.
@@ -77,14 +86,5 @@ GeoJsonStats = {
     }
     var stats = geojsonStats(geojson);
     return stats;
-  },
-  /**
-   * Returns true if a valid GeoJSON object was provided.
-   * @function
-   * @param {object} geojson - A valid GeoJSON object.
-   * @returns {Array.<Object>} - The length in meters.
-   */
-  validate: function (geojson) {
-    return validGeoJson.valid(geojson);
   }
 };
