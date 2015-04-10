@@ -20,6 +20,7 @@ three methods:
 -   `getArea`
 -   `getLength`
 -   `getStats`
+-   `validate`
 
 **Note** `GeoJsonStats` is only available on the server, not on the
 client!
@@ -142,6 +143,42 @@ Output:
       min: 61586796.54,
       max: 61586796.54
     }];
+
+### validate
+
+Supported input types:
+
+-   any
+
+Output:
+
+-   Boolean true/false (valid GeoJson objects return true)
+
+#### Code Sample
+
+    var Polygon = {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [-75.69030761718749,
+            35.74205383068037],
+          [-76.300048828125,
+            35.02999636902566],
+          [-76.0858154296875,
+            35.29943548054543],
+          [-75.69030761718749,
+            35.74205383068037]
+        ]
+      ]
+    };
+
+    var stats = GeoJsonStats.validate(Polygon);
+
+
+    returns
+     true
+
+
 
 Under the hood
 --------------

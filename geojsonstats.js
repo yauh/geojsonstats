@@ -84,7 +84,7 @@ GeoJsonStats = {
    * @param {object} geojson - A valid GeoJSON object.
    * @returns {Array.<Object>} - The length in meters.
    */
-  valid: function (geojson) {
+  validate: function (geojson) {
     return validGeoJson.valid(geojson);
   }
 };

@@ -87,14 +87,14 @@ Tinytest.add('getStats - Error nonGeoJson', function (test) {
 
 Tinytest.add('validate - testObjPolygonGeometry', function (test) {
   var testObj = testObjPolygonGeometry;
-  var result = GeoJsonStats.valid(testObj);
+  var result = GeoJsonStats.validate(testObj);
   var expected = true;
   test.isTrue(result, expected);
 });
 
-Tinytest.add('validate - Error nonGeoJson', function (test) {
+Tinytest.add('validate - nonGeoJson', function (test) {
   var testObj = testObjNonGeoJson;
-  var result = GeoJsonStats.valid(testObj);
+  var result = GeoJsonStats.validate(testObj);
   var expected = false;
   test.isFalse(result, expected);
 });
